@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdul Hannan - Full Stack Software Developer | AI & ML Specialist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #6d28d9; /* purple accent */
+            --secondary-color: #8b5cf6;
+            --dark-bg: #fbf7f1;    /* creamy page background */
+            --light-bg: #fffdf8;   /* section background / off-white */
+            --card-bg: #ffffff;    /* cards remain white */
+            --text-dark: #0b1220;  /* deep charcoal for text */
+            --text-light: #6b7280; /* soft gray for secondary text */
+            --border-color: #efe7dd; /* subtle light border */
+            --accent-color: #6ee7b7; /* small accent (kept) */
+            --ai-gradient: linear-gradient(135deg, #8b5cf6 0%, #e9ddff 100%);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--dark-bg);
+            animation: fadeInBody 1s ease-in;
+        }
+
+        @keyframes fadeInBody {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--light-bg);
+            box-shadow: 0 2px 6px rgba(16,24,40,0.06);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-dark);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        /* Hamburger */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.4rem;
+        }
+
+        .nav-toggle .bar {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--text-dark);
+            margin: 4px 0;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        nav .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(109,40,217,0.9) 0%, var(--light-bg) 100%);
+            color: var(--text-dark);
+            padding: 6rem 2rem;
+            text-align: center;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero .container {
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .hero-location {
+            font-size: 1rem;
+            color: #fffdf8;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            animation: slideInUp 0.8s ease-out 0.4s both;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: slideInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background-color: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin: 0.5rem;
+            animation: scaleIn 0.8s ease-out 0.4s both;
+            white-space: nowrap;
+        }
+
+        .hero .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* About Section */
+        .about {
+            padding: 4rem 2rem;
+            background-color: var(--light-bg);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 1rem;
+            animation: slideInDown 0.6s ease-out;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .about-intro {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .about-intro h3 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-intro p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+        }
+
+        .about-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .highlight-item {
+            background: var(--card-bg);
+            padding: 1.4rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: box-shadow 0.2s ease;
+            text-align: center;
+            border-top: 4px solid var(--accent-color);
+            box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+        }
+
+        .highlight-item:hover {
+            box-shadow: 0 8px 22px rgba(16,24,40,0.08);
+        }
+
+        .highlight-item i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .highlight-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .highlight-item p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .about-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .detail-block {
+            background: var(--card-bg);
+            padding: 1.6rem;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+            border: 1px solid var(--border-color);
+        }
+
+        .detail-block h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .detail-block p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 4rem 2rem;
+            background-color: var(--dark-bg);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            padding: 1.8rem;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+            transition: box-shadow 0.2s ease;
+            border-top: 4px solid var(--accent-color);
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 8px 22px rgba(16,24,40,0.08);
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .service-card.ai-featured {
+            background: var(--card-bg);
+            border-top: 4px solid rgba(118,75,162,0.9);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .service-examples {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        /* Works Section */
+        .works {
+            padding: 4rem 2rem;
+            background-color: var(--card-bg);
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .work-item {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+            transition: box-shadow 0.2s ease;
+            animation: scaleIn 0.6s ease-out;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .work-item:hover {
+            box-shadow: 0 8px 22px rgba(16,24,40,0.08);
+        }
+
+        .work-item-content {
+            padding: 1.5rem;
+        }
+
+        .work-item-content a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            word-break: break-all;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        .work-item-content a:hover {
+            text-decoration: underline;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 4rem 2rem;
+            background: var(--light-bg);
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .skill-category {
+            background: var(--card-bg);
+            padding: 1.6rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+            border: 1px solid var(--border-color);
+            transition: box-shadow 0.2s ease;
+            position: relative;
+            overflow: hidden;
+            animation: scaleIn 0.6s ease-out;
+        }
+
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--ai-gradient);
+        }
+
+        .skill-category:hover {
+            box-shadow: 0 8px 22px rgba(16,24,40,0.08);
+        }
+
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.8rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .skill-category h3 i {
+            font-size: 1.5rem;
+        }
+
+        .skill-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            min-height: 100px;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .skill-tag.ai {
+            background: var(--ai-gradient);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.35);
+        }
+
+        .skill-tag.ai:hover {
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.5);
+            transform: translateY(-5px) scale(1.05);
+        }
+
+        .ai-badge {
+            display: inline-block;
+            background: var(--ai-gradient);
+            color: white;
+            padding: 0.3rem 0.7rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .skill-icon {
+            font-size: 1.1rem;
+        }
+
+        /* Experience Section */
+        .experience {
+            padding: 4rem 2rem;
+            background-color: var(--light-bg);
+        }
+
+        .experience-timeline {
+            max-width: 1000px;
+            margin: 3rem auto 0;
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: var(--primary-color);
+        }
+
+        .experience-item {
+            margin-bottom: 4rem;
+            width: 45%;
+        }
+
+        .experience-item:nth-child(odd) {
+            margin-left: 0;
+            text-align: right;
+            padding-right: 2rem;
+            animation: slideInLeft 0.6s ease-out;
+        }
+
+        .experience-item:nth-child(even) {
+            margin-left: 55%;
+            text-align: left;
+            padding-left: 2rem;
+            animation: slideInRight 0.6s ease-out;
+        }
+
+        .experience-content {
+            background: var(--card-bg);
+            padding: 1.8rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+            border: 1px solid var(--border-color);
+            transition: box-shadow 0.2s ease;
+            position: relative;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .experience-content:hover {
+            box-shadow: 0 8px 22px rgba(16,24,40,0.08);
+        }
+
+        .experience-badge {
+            display: inline-block;
+            background: var(--ai-gradient);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .experience-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .experience-content .company {
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .experience-content .duration {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+        }
+
+        .experience-content .location {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .experience-description {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e0f2fe;
+        }
+
+        .experience-description p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .tech-used {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin-top: 1rem;
+        }
+
+        .tech-used span {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 4rem 2rem;
+            background-color: var(--dark-bg);
+        }
+
+        /* Education Section */
+        .education {
+            padding: 4rem 2rem;
+            background: var(--light-bg);
+        }
+
+        .education-container {
+            max-width: 900px;
+            margin: 3rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .education-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+            border: 1px solid var(--border-color);
+            transition: box-shadow 0.2s ease;
+            position: relative;
+            animation: slideInUp 0.6s ease-out;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .education-card:hover {
+            box-shadow: 0 8px 22px rgba(16,24,40,0.08);
+        }
+
+        .education-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--ai-gradient);
+        }
+
+        .education-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .degree-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .university-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .education-details {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+        }
+
+        .education-details div {
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .education-details i {
+            color: var(--primary-color);
+            min-width: 20px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background-color: var(--card-bg);
+            padding: 1.8rem;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+            border-top: 4px solid var(--accent-color);
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        .testimonial-text {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .testimonial-role {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 2rem;
+            background-color: var(--light-bg);
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 3rem auto;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            background-color: var(--card-bg);
+            padding: 1.6rem;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+            animation: fadeIn 0.6s ease-out;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .contact-item a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            word-break: break-all;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .hero .btn {
+                padding: 0.65rem 1.5rem;
+                font-size: 0.95rem;
+                margin: 0.4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                padding: 4rem 1.5rem;
+                min-height: 500px;
+            }
+
+            .hero .container {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .hero .btn {
+                display: inline-block;
+                padding: 0.6rem 1.5rem;
+                font-size: 0.9rem;
+                margin: 0.4rem 0.3rem;
+            }
+
+            /* show hamburger and hide inline nav on small screens */
+            .nav-toggle { display: block; }
+            nav .nav-list {
+                display: block;
+                position: absolute;
+                right: 1rem;
+                top: 64px;
+                background: var(--light-bg);
+                box-shadow: 0 8px 20px rgba(16,24,40,0.08);
+                border-radius: 8px;
+                padding: 0.25rem 0.5rem;
+                width: 220px;
+                max-height: 0;
+                overflow: hidden;
+                opacity: 0;
+                transform: translateY(-8px);
+                transition: max-height 320ms cubic-bezier(.2,.9,.2,1), opacity 220ms ease, transform 260ms cubic-bezier(.2,.9,.2,1);
+                pointer-events: none;
+            }
+            nav .nav-list.open {
+                max-height: 420px; /* enough for menu items */
+                opacity: 1;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+            nav .nav-list li { display: block; margin: 0.5rem 0; }
+
+            .experience-timeline::before {
+                display: none;
+            }
+
+            .experience-item {
+                width: 100%;
+                margin-left: 0 !important;
+                margin-bottom: 2rem;
+                padding-left: 0 !important;
+                text-align: left !important;
+                padding-right: 0 !important;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 3rem 1rem;
+                min-height: 450px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+                margin-bottom: 1.8rem;
+            }
+
+            .hero .btn {
+                display: inline-block;
+                padding: 0.55rem 1.2rem;
+                font-size: 0.85rem;
+                margin: 0.35rem 0.2rem;
+            }
+
+            nav .container {
+                padding: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .hero .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .contact-item {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Abdul Hannan</div>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-list">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#works">Works</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Abdul Hannan</h1>
+            <p>Full Stack Software Developer | Java Spring Boot | JavaScript | React | Node.js</p>
+            <div class="hero-location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Maryland, United States</span>
+            </div>
+            <a href="#contact" class="btn">Get in Touch</a>
+            <a href="#about" class="btn">Learn More</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-intro">
+                    <h3>Full Stack Developer & AI/ML Specialist</h3>
+                    <p>I'm Abdul Hannan, a results-driven Full Stack Software Developer with a Bachelor's degree in Computer Science from FAST University Karachi and a Master's degree in IT Management from Concordia University, Saint Paul. With <strong>5+ years of professional software development experience</strong>, I have successfully designed, developed, and deployed scalable applications that serve millions of users globally. I specialize in building intelligent, cloud-native solutions that combine robust backend architecture with seamless user experiences.</p>
+                    
+                    <p style="margin-top: 1.2rem; color: var(--text-light);">My journey in technology has been driven by a passion for solving complex problems through innovative software solutions. I started my career as a Java Developer at Xynotech, where I built foundational expertise in OOP principles and enterprise application development. Over the years, I've evolved into a Sr. Java Developer at Consult America, leading the design and implementation of sophisticated microservices architectures, AI-powered solutions, and cloud-deployed applications using Spring Boot, React, and AWS.</p>
+                </div>
+
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <i class="fas fa-rocket"></i>
+                        <h4>Innovation Driven</h4>
+                        <p>Passionate about creating innovative solutions that push technological boundaries and deliver measurable business impact. I actively research emerging technologies and implement them strategically to stay ahead of industry trends.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-brain"></i>
+                        <h4>AI & ML Expertise</h4>
+                        <p>Deep expertise in developing intelligent chatbots, machine learning systems, NLP solutions, and data-driven applications. I've built production-grade AI systems that handle complex conversational interactions and provide real-time insights.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-users"></i>
+                        <h4>Team Leader</h4>
+                        <p>Strong communicator with proven ability to lead cross-functional teams, mentor junior developers, and deliver enterprise-level projects. I thrive in collaborative environments where innovation meets execution.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-cog"></i>
+                        <h4>Problem Solver</h4>
+                        <p>Creative thinker who breaks down complex challenges into actionable solutions. I excel at architectural design, system optimization, and implementing best practices that ensure code quality and application performance.</p>
+                    </div>
+                </div>
+
+                <div class="about-details">
+                    <div class="detail-block">
+                        <h4><i class="fas fa-code"></i> Technical Excellence</h4>
+                        <p><strong>Backend:</strong> Java Spring Boot, Node.js, Go, Rust | <strong>Frontend:</strong> React, Angular, Vue.js | <strong>Databases:</strong> MySQL, MongoDB, PostgreSQL | <strong>Cloud & DevOps:</strong> AWS (EC2, S3, Lambda, RDS), Docker, Kubernetes | <strong>AI/ML:</strong> Python, TensorFlow, ChatBot frameworks | <strong>Tools:</strong> Git, Jenkins, Jira, Postman. I'm constantly learning and adapting to emerging technologies to deliver cutting-edge solutions.</p>
+                    </div>
+                    <div class="detail-block">
+                        <h4><i class="fas fa-briefcase"></i> Professional Approach</h4>
+                        <p>I believe in crafting clean, maintainable, and scalable code while keeping user experience and business objectives at the forefront. My approach combines technical rigor with pragmatic problem-solving. I follow Agile methodologies, practice test-driven development, and embrace continuous integration/continuous deployment. Every project is an opportunity to create exceptional solutions that make a real impact.</p>
+                    </div>
+                </div>
+
+                <div class="about-stats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                    <div style="text-align: center; padding: 1.5rem; background: var(--card-bg); border-radius: 10px; border: 1px solid var(--border-color);">
+                        <h3 style="color: var(--primary-color); font-size: 2.5rem; margin-bottom: 0.5rem;">5+</h3>
+                        <p>Years of Experience</p>
+                    </div>
+                    <div style="text-align: center; padding: 1.5rem; background: var(--card-bg); border-radius: 10px; border: 1px solid var(--border-color);">
+                        <h3 style="color: var(--primary-color); font-size: 2.5rem; margin-bottom: 0.5rem;">40+</h3>
+                        <p>Technologies Mastered</p>
+                    </div>
+                    <div style="text-align: center; padding: 1.5rem; background: var(--card-bg); border-radius: 10px; border: 1px solid var(--border-color);">
+                        <h3 style="color: var(--primary-color); font-size: 2.5rem; margin-bottom: 0.5rem;">10+</h3>
+                        <p>Enterprise Projects</p>
+                    </div>
+                    <div style="text-align: center; padding: 1.5rem; background: var(--card-bg); border-radius: 10px; border: 1px solid var(--border-color);">
+                        <h3 style="color: var(--primary-color); font-size: 2.5rem; margin-bottom: 0.5rem;">Global</h3>
+                        <p>Team Collaboration</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">My Services</h2>
+            <div class="services-grid">
+                <div class="service-card ai-featured">
+                    <h3><i class="fas fa-robot"></i> AI & Chatbot Development <span class="ai-badge">Featured</span></h3>
+                    <p>Intelligent conversational AI systems powered by cutting-edge machine learning technologies. I develop sophisticated chatbots for customer engagement, automation, and support. From natural language processing to conversational interfaces, I create AI solutions that understand and respond to user needs intelligently.</p>
+                    <div class="service-examples">
+                        <strong>Expertise:</strong> ChatBot AI, NLP, Machine Learning, Python, TensorFlow
+                    </div>
+                </div>
+                <div class="service-card">
+                    <h3><i class="fas fa-globe"></i> Web Development</h3>
+                    <p>The art of creating interactive and engaging online experiences. It involves designing and building websites that seamlessly blend aesthetics with functionality, using a mix of programming languages, frameworks, and tools. From crafting intuitive user interfaces to implementing complex backend systems, web development transforms ideas into dynamic digital realities.</p>
+                    <div class="service-examples">
+                        <strong>Companies:</strong> Northstar Management, Benchmatrix
+                    </div>
+                </div>
+                <div class="service-card">
+                    <h3><i class="fas fa-mobile-alt"></i> Mobile Development</h3>
+                    <p>Crafting intuitive and feature-rich applications for a seamless user experience across diverse mobile platforms. Leveraging cutting-edge tools and frameworks, I specialize in creating responsive and high-performance apps that meet user needs while adhering to the latest design and development standards.</p>
+                    <div class="service-examples">
+                        <strong>Companies:</strong> Emplifi Live Ecommerce
+                    </div>
+                </div>
+                <div class="service-card">
+                    <h3><i class="fas fa-database"></i> Database Design</h3>
+                    <p>Database design is the foundation of efficient data management, encompassing the art of structuring information for optimal storage, retrieval, and manipulation. It involves crafting a blueprint that aligns with business needs, ensuring data integrity, scalability, and performance.</p>
+                    <div class="service-examples">
+                        <strong>Expertise:</strong> MySQL, MongoDB, Data Architecture
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Works Section -->
+    <section class="works" id="works">
+        <div class="container">
+            <h2 class="section-title">My Works</h2>
+            <div class="works-grid">
+                <div class="work-item">
+                    <div class="work-item-content">
+                        <h3>AI Chatbots</h3>
+                        <p style="color: var(--text-light); margin-top: 0.5rem;">Intelligent conversational AI systems for customer engagement and automation</p>
+                    </div>
+                </div>
+                <div class="work-item">
+                    <div class="work-item-content">
+                        <h3>Northstar Club Management</h3>
+                        <p style="color: var(--text-light); margin-top: 0.5rem;">Complete golf club management system with member profiles, bookings, and analytics</p>
+                    </div>
+                </div>
+                <div class="work-item">
+                    <div class="work-item-content">
+                        <h3>Banking Application</h3>
+                        <p style="color: var(--text-light); margin-top: 0.5rem;">Secure banking platform with transaction management, account handling, and reporting</p>
+                    </div>
+                </div>
+                <div class="work-item">
+                    <div class="work-item-content">
+                        <h3>Fraud Detection System</h3>
+                        <p style="color: var(--text-light); margin-top: 0.5rem;">Advanced fraud detection platform deployed across Pakistan for financial security</p>
+                    </div>
+                </div>
+                <div class="work-item">
+                    <div class="work-item-content">
+                        <h3>Human Resource ERP System</h3>
+                        <p style="color: var(--text-light); margin-top: 0.5rem;">Enterprise HR management system with payroll, attendance, recruitment, and employee lifecycle management</p>
+                    </div>
+                </div>
+                <div class="work-item">
+                    <div class="work-item-content">
+                        <h3>Emplifi Ecommerce Platform</h3>
+                        <p style="color: var(--text-light); margin-top: 0.5rem;">Full-featured ecommerce platform with product management, shopping cart, payment integration, and order tracking</p>
+                    </div>
+                </div>
+                <div class="work-item">
+                    <div class="work-item-content">
+                        <h3>Supply Chain Management System</h3>
+                        <p style="color: var(--text-light); margin-top: 0.5rem;">End-to-end supply chain optimization with inventory tracking, supplier management, and logistics coordination</p>
+                    </div>
+                </div>
+                <div class="work-item">
+                    <div class="work-item-content">
+                        <h3>Real-Time Analytics Dashboard</h3>
+                        <p style="color: var(--text-light); margin-top: 0.5rem;">Interactive business intelligence platform with real-time data visualization, reporting, and predictive analytics</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2 class="section-title">Programming Languages & Frameworks <span class="ai-badge"><i class="fas fa-bolt"></i> AI-Powered</span></h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><i class="fas fa-server"></i> Backend</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag"><i class="skill-icon fas fa-leaf"></i> Spring Boot</span>
+                        <span class="skill-tag"><i class="skill-icon fab fa-java"></i> Java</span>
+                        <span class="skill-tag"><i class="skill-icon fab fa-node-js"></i> Node.js</span>
+                        <span class="skill-tag"><i class="skill-icon fas fa-code"></i> Go Lang</span>
+                        <span class="skill-tag"><i class="skill-icon fas fa-code"></i> Rust</span>
+                        <span class="skill-tag"><i class="skill-icon fas fa-code"></i> TypeScript</span>
+                        <span class="skill-tag"><i class="skill-icon fas fa-code"></i> Express.js</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-paint-brush"></i> Frontend</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag"><i class="skill-icon fab fa-react"></i> React</span>
+                        <span class="skill-tag"><i class="skill-icon fab fa-angular"></i> Angular</span>
+                        <span class="skill-tag"><i class="skill-icon fab fa-js-square"></i> JavaScript</span>
+                        <span class="skill-tag"><i class="skill-icon fab fa-html5"></i> HTML5</span>
+                        <span class="skill-tag"><i class="skill-icon fab fa-css3-alt"></i> CSS3</span>
+                        <span class="skill-tag"><i class="skill-icon fas fa-code"></i> Vue.js</span>
+                        <span class="skill-tag"><i class="skill-icon fas fa-code"></i> Tailwind CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> Database & Cloud</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag"><i class="skill-icon fas fa-leaf"></i> MongoDB</span>
+                        <span class="skill-tag"><i class="skill-icon fas fa-database"></i> MySQL</span>
+                        <span class="skill-tag"><i class="skill-icon fas fa-database"></i> PostgreSQL</span>
+                        <span class="skill-tag"><i class="skill-icon fas fa-cloud"></i> AWS</span>
+                        <span class="skill-tag"><i class="skill-icon fas fa-cloud"></i> Firebase</span>
+                        <span class="skill-tag"><i class="skill-icon fas fa-code"></i> Redis</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-robot"></i> AI & ML <span class="ai-badge">New</span></h3>
+                    <div class="skill-list">
+                        <span class="skill-tag ai"><i class="skill-icon fas fa-brain"></i> Python ML</span>
+                        <span class="skill-tag ai"><i class="skill-icon fas fa-brain"></i> TensorFlow</span>
+                        <span class="skill-tag ai"><i class="skill-icon fas fa-brain"></i> ChatBot Dev</span>
+                        <span class="skill-tag ai"><i class="skill-icon fas fa-brain"></i> Data Analysis</span>
+                        <span class="skill-tag ai"><i class="skill-icon fas fa-brain"></i> NLP</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> Tools & DevOps</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag"><i class="skill-icon fab fa-docker"></i> Docker</span>
+                        <span class="skill-tag"><i class="skill-icon fas fa-cube"></i> Kubernetes</span>
+                        <span class="skill-tag"><i class="skill-icon fas fa-code-branch"></i> Git</span>
+                        <span class="skill-tag"><i class="skill-icon fas fa-code"></i> Jenkins</span>
+                        <span class="skill-tag"><i class="skill-icon fas fa-code"></i> Postman</span>
+                        <span class="skill-tag"><i class="skill-icon fas fa-code"></i> Jira</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-plus"></i> Other Languages</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag"><i class="skill-icon fas fa-code"></i> C++</span>
+                        <span class="skill-tag"><i class="skill-icon fab fa-python"></i> Python</span>
+                        <span class="skill-tag"><i class="skill-icon fas fa-code"></i> Kotlin</span>
+                        <span class="skill-tag"><i class="skill-icon fas fa-code"></i> Swift</span>
+                        <span class="skill-tag"><i class="skill-icon fas fa-code"></i> GraphQL</span>
+                        <span class="skill-tag"><i class="skill-icon fas fa-code"></i> REST APIs</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <div class="experience-content">
+                        <div class="experience-badge">Current</div>
+                        <h3><i class="fas fa-crown"></i> Sr Java Developer</h3>
+                        <div class="company"><i class="fas fa-building"></i> Consult America</div>
+                        <div class="duration"><i class="fas fa-calendar-alt"></i> August 2024 - Present</div>
+                        <div class="location"><i class="fas fa-map-marker-alt"></i> United States · On-site</div>
+                        <div class="experience-description">
+                            <p>Leading enterprise-scale full-stack development initiatives using modern Java, React, and AWS technologies. Architecting cloud solutions and mentoring development teams on best practices. Delivering high-performance, scalable applications with focus on code quality and innovation.</p>
+                            <ul style="margin-top: 0.8rem; margin-left: 1.5rem; color: var(--text-light); font-size: 0.9rem;">
+                                <li>Built Single Page Applications (SPA) using React.js with drag-and-drop UI components using React-Draggable</li>
+                                <li>Developed backend RESTful APIs using Spring Boot; integrated microservices with Kafka messaging for event-driven architecture</li>
+                                <li>Leveraged Java 17 advanced features (Streams API, Sealed Classes, Records, Functional Interfaces) for efficient backend processing</li>
+                                <li>Designed and deployed comprehensive AWS cloud architecture including EC2, S3, Lambda, VPC, Security Groups, EBS, ELB, and CloudWatch monitoring</li>
+                                <li>Deployed containerized applications using Docker and orchestrated with Kubernetes for high availability and scalability</li>
+                                <li>Mentored junior developers, conducted thorough code reviews, and optimized UI with React-Redux and Bootstrap for responsive design</li>
+                                <li>Worked with Agile/Scrum methodology including bi-weekly sprints, daily standups, and story point estimations</li>
+                                <li>Developed backend services using Node.js framework for high-quality, scalable, and reusable components</li>
+                                <li>Implemented React components with Forms, Events, Keys, Router, Animations, and Flux architecture patterns</li>
+                                <li>Utilized Node Package Manager (NPM) for dependency management and module installation</li>
+                                <li>Applied Spring Core annotations for Dependency Injection (DI) and Spring MVC for REST API development</li>
+                                <li>Developed DAOs using JPA and Hibernate persistence API for CRUD operations on MongoDB databases</li>
+                                <li>Ensured code quality through comprehensive testing and QA methodologies</li>
+                            </ul>
+                            <div class="tech-used">
+                                <span><i class="fas fa-tag"></i> Java 17</span>
+                                <span><i class="fas fa-tag"></i> Spring Boot</span>
+                                <span><i class="fas fa-tag"></i> React.js</span>
+                                <span><i class="fas fa-tag"></i> AWS</span>
+                                <span><i class="fas fa-tag"></i> Docker</span>
+                                <span><i class="fas fa-tag"></i> Kubernetes</span>
+                                <span><i class="fas fa-tag"></i> Kafka</span>
+                                <span><i class="fas fa-tag"></i> Node.js</span>
+                                <span><i class="fas fa-tag"></i> MongoDB</span>
+                                <span><i class="fas fa-tag"></i> Agile/Scrum</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-content">
+                        <h3><i class="fas fa-star"></i> Sr. Software Engineer</h3>
+                        <div class="company"><i class="fas fa-building"></i> Sibisoft (Pvt.) Ltd.</div>
+                        <div class="duration"><i class="fas fa-calendar-alt"></i> October 2022 - August 2024</div>
+                        <div class="location"><i class="fas fa-map-marker-alt"></i> Karachi, Pakistan · Remote</div>
+                        <div class="experience-description">
+                            <p>Designed and developed multi-tenant club management software solutions for Northstar with comprehensive membership, billing, reservations, dining, POS, CRM, events, and wellness modules. Led production support for multiple client clubs with 24/7 uptime, implementing microservices architecture and advanced DevOps practices.</p>
+                            <ul style="margin-top: 0.8rem; margin-left: 1.5rem; color: var(--text-light); font-size: 0.9rem;">
+                                <li>Designed multi-tenant architecture with robust data isolation, role-based security, and optimized performance across multiple clubs</li>
+                                <li>Delivered production support for multiple Northstar clubs with incident resolution and zero-downtime deployment strategies</li>
+                                <li>Implemented Spring Boot microservices with REST APIs, Swagger documentation, Spring Security, OAuth2, and JWT tokens</li>
+                                <li>Developed Power BI dashboards with DirectQuery delivering real-time insights into member engagement, POS revenue, and facility usage</li>
+                                <li>Enhanced UI/UX following WCAG accessibility standards and user feedback for web and kiosk platforms</li>
+                                <li>Containerized applications with Docker and deployed via Kubernetes with Prometheus and Grafana monitoring</li>
+                                <li>Built CI/CD pipelines with Jenkins automating builds, testing, and deployments across DEV, QA, UAT, and PROD environments</li>
+                                <li>Collaborated with stakeholders and finance teams on custom workflows and POS reporting automation</li>
+                                <li>Ensured SOX, HIPAA, PCI-DSS, and corporate governance compliance through documentation and audit support</li>
+                            </ul>
+                            <div class="tech-used">
+                                <span><i class="fas fa-tag"></i> Spring Boot</span>
+                                <span><i class="fas fa-tag"></i> Spring WebFlux</span>
+                                <span><i class="fas fa-tag"></i> Kubernetes</span>
+                                <span><i class="fas fa-tag"></i> Power BI</span>
+                                <span><i class="fas fa-tag"></i> Jenkins</span>
+                                <span><i class="fas fa-tag"></i> Docker</span>
+                                <span><i class="fas fa-tag"></i> Kafka</span>
+                                <span><i class="fas fa-tag"></i> SonarQube</span>
+                                <span><i class="fas fa-tag"></i> SDLC Best Practices</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-content">
+                        <h3><i class="fas fa-code-branch"></i> Software Engineer</h3>
+                        <div class="company"><i class="fas fa-building"></i> BenchMatrix</div>
+                        <div class="duration"><i class="fas fa-calendar-alt"></i> December 2021 - September 2022</div>
+                        <div class="location"><i class="fas fa-map-marker-alt"></i> Karachi, Pakistan · Hybrid</div>
+                        <div class="experience-description">
+                            <p>Developed and maintained Java Spring Boot applications with focus on backend services and microservices architecture. Enhanced front-end functionality using AngularJS with seamless user experience. Implemented DSCSA compliance processes and automated CI/CD pipelines.</p>
+                            <ul style="margin-top: 0.8rem; margin-left: 1.5rem; color: var(--text-light); font-size: 0.9rem;">
+                                <li>Developed and maintained Java Spring Boot applications focusing on backend services and microservices architecture</li>
+                                <li>Enhanced front-end functionality using AngularJS ensuring seamless user experience</li>
+                                <li>Automated build and deployment processes using Jenkins, Docker, and Azure DevOps</li>
+                                <li>Utilized Kafka to handle large-scale data processing, improving system scalability and reliability</li>
+                                <li>Supported serialization and compliance processes aligned with Drug Supply Chain Security Act (DSCSA) standards</li>
+                                <li>Conducted regular audits and system checks using rfxcel Audit Manager and compliance reporting dashboards</li>
+                                <li>Implemented traceability matrix analysis and periodic compliance assessments</li>
+                                <li>Worked with Agile methodologies for sprint-based development cycles</li>
+                            </ul>
+                            <div class="tech-used">
+                                <span><i class="fas fa-tag"></i> Spring Boot</span>
+                                <span><i class="fas fa-tag"></i> Spring MVC</span>
+                                <span><i class="fas fa-tag"></i> AngularJS</span>
+                                <span><i class="fas fa-tag"></i> Kafka</span>
+                                <span><i class="fas fa-tag"></i> Jenkins</span>
+                                <span><i class="fas fa-tag"></i> Azure DevOps</span>
+                                <span><i class="fas fa-tag"></i> DSCSA</span>
+                                <span><i class="fas fa-tag"></i> Agile</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-content">
+                        <h3><i class="fas fa-mobile-alt"></i> Java Developer</h3>
+                        <div class="company"><i class="fas fa-building"></i> Xynotech</div>
+                        <div class="duration"><i class="fas fa-calendar-alt"></i> July 2019 - August 2021</div>
+                        <div class="location"><i class="fas fa-map-marker-alt"></i> Karachi, Pakistan</div>
+                        <div class="experience-description">
+                            <p>Developed and maintained Java applications using core Object-Oriented Programming (OOP) principles including Polymorphism and Encapsulation. Implemented MVC architecture with Spring MVC framework and designed SOAP-based web services for system integration.</p>
+                            <ul style="margin-top: 0.8rem; margin-left: 1.5rem; color: var(--text-light); font-size: 0.9rem;">
+                                <li>Developed and maintained Java applications using OOP principles (Polymorphism, Encapsulation) for scalable solutions</li>
+                                <li>Implemented Model-View-Controller (MVC) architecture with Spring MVC framework for improved code organization</li>
+                                <li>Designed and developed SOAP-based web services for seamless integration with external systems and third-party platforms</li>
+                                <li>Enhanced user interfaces leveraging jQuery for DOM manipulation, event handling, and AJAX calls</li>
+                                <li>Created dynamic, responsive web pages using HTML5, CSS3, and AJAX with cross-browser compatibility</li>
+                                <li>Applied best practices in code organization, maintainability, and separation of concerns</li>
+                                <li>Integrated jQuery plugins to extend functionality and improve user experience</li>
+                            </ul>
+                            <div class="tech-used">
+                                <span><i class="fas fa-tag"></i> Java</span>
+                                <span><i class="fas fa-tag"></i> Spring MVC</span>
+                                <span><i class="fas fa-tag"></i> SOAP Web Services</span>
+                                <span><i class="fas fa-tag"></i> jQuery</span>
+                                <span><i class="fas fa-tag"></i> HTML5</span>
+                                <span><i class="fas fa-tag"></i> CSS3</span>
+                                <span><i class="fas fa-tag"></i> AJAX</span>
+                                <span><i class="fas fa-tag"></i> OOP</span>
+                            </div>
+                        </div>
+                                <span><i class="fas fa-tag"></i> jQuery</span>
+                                <span><i class="fas fa-tag"></i> HTML5/CSS3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                <span><i class="fas fa-tag"></i> App Publishing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education" id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-container">
+                <div class="education-card">
+                    <i class="fas fa-graduation-cap education-icon"></i>
+                    <div class="degree-title">Master of Science</div>
+                    <div class="university-name"><i class="fas fa-university"></i> Concordia University</div>
+                    <div class="education-details">
+                        <div>
+                            <i class="fas fa-book"></i>
+                            <span><strong>Field of Study:</strong> IT Management</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span><strong>Location:</strong> Saint Paul, USA</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-lightbulb"></i>
+                            <span><strong>Focus:</strong> Technology Leadership, Strategic IT Planning, Digital Transformation</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Specialization:</strong> Enterprise Systems, IT Governance, Innovation Management</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="education-card">
+                    <i class="fas fa-laptop education-icon"></i>
+                    <div class="degree-title">Bachelor of Science</div>
+                    <div class="university-name"><i class="fas fa-university"></i> FAST University Karachi</div>
+                    <div class="education-details">
+                        <div>
+                            <i class="fas fa-book"></i>
+                            <span><strong>Field of Study:</strong> Computer Science</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span><strong>Location:</strong> Karachi, Pakistan</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-code"></i>
+                            <span><strong>Core Competencies:</strong> Software Development, Algorithms, Data Structures, OOP</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Expertise:</strong> Full Stack Development, System Design, Programming Fundamentals</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-star"></i>
+                            <span><strong>Foundation:</strong> 5+ years hands-on industry experience with proven success</span>
+                        </div>
+                    </div>
+                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Testimonials</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"I am thoroughly impressed with Abdul Hannan work. Their coding skills and dedication are outstanding. They tackled complex challenges with ease, delivering results that exceeded my expectations. Their professionalism and responsiveness made the entire process smooth. I couldn't be happier with the outcome. Highly recommended!"</p>
+                    <div class="testimonial-author">Justin Alvardo</div>
+                    <div class="testimonial-role">United States of America</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Abdul Hannan exceeded expectations. Their expertise and efficient solutions were evident throughout the project. Exceptional communication and timely fast delivery. Highly recommended!"</p>
+                    <div class="testimonial-author">Abdullah Arif</div>
+                    <div class="testimonial-role">United Kingdom</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Abdul Hannan exudes a remarkable passion for web development, consistently demonstrating top-notch performance. His adeptness in meeting deadlines effortlessly is truly commendable. Abdul's team exhibits a high level of professionalism in client interactions, portraying a seamless and proficient approach."</p>
+                    <div class="testimonial-author">Eleonora Filotti</div>
+                    <div class="testimonial-role">Human Resource, Viva Group</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-content">
+                <p>Software Development Related Services</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3><i class="fas fa-envelope"></i> Email</h3>
+                        <a href="mailto:ah1663227@gmail.com">hannankaimkhani96@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <h3><i class="fas fa-phone"></i> Phone</h3>
+                        <a href="tel:+923361782833">+13204201083</a>
+                    </div>
+                    <div class="contact-item">
+                        <h3><i class="fab fa-youtube"></i> YouTube</h3>
+                        <a href="https://www.youtube.com/@AbdulHannan-wh9nk" target="_blank">Abdul Hannan Arif</a>
+                    </div>
+                    <div class="contact-item">
+                        <h3><i class="fab fa-linkedin"></i> LinkedIn</h3>
+                        <a href="https://www.linkedin.com/in/abdul-hannan-2a784b198/" target="_blank">Abdul Hannan</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Abdul Hannan. All rights reserved.</p>
+    </footer>
+    <script>
+        // Mobile nav toggle
+        (function(){
+            const btn = document.querySelector('.nav-toggle');
+            const nav = document.querySelector('.nav-list');
+            if(!btn || !nav) return;
+            btn.addEventListener('click', function(){
+                const open = nav.classList.toggle('open');
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            // close nav when clicking outside
+            document.addEventListener('click', function(e){
+                if(!nav.classList.contains('open')) return;
+                if(e.target.closest('nav')) return;
+                nav.classList.remove('open');
+                btn.setAttribute('aria-expanded','false');
+            });
+        })();
+    </script>
+</body>
+</html>
